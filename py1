@@ -1,0 +1,17 @@
+def char_to_number(char):
+    if char == "&":
+        return 27
+    if 'a' <= char <= 'z':
+        return ord(char) - ord('a') + 1
+    else:
+        return None
+C = input("text: ").replace(" ","&").lower()
+result = []
+for i in range(len(C)):
+    result.append(char_to_number(C[i]))
+print(result)
+for i in range(len(result)):
+    print(result[i] , end="")
+x_coord = sum(result[i] for i in range(0, len(result), 2))
+y_coord = sum(result[i] for i in range(1, len(result), 2))
+print(f"X: {x_coord} , y: {y_coord}")
