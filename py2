@@ -1,0 +1,9 @@
+a = input("results desired: ").replace(" " , "")
+nums = [int(x) for x in a.split(",")]
+print(nums)
+x = input("2d x position")
+y = input("2d y position")
+i = 1
+for num in nums:
+    print(f"{x},{y},{i},{num}")
+    i += 1
